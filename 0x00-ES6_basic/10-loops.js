@@ -3,15 +3,6 @@
 * And don’t forget that var is not ES6-friendly.
 */
 
-// export default function appendToEachArrayValue(array, appendString) {
-//   for (let idx of array) {
-//     const value = array[idx];
-//     idx = appendString + value;
-//   }
-
-//   return array;
-// }
-
 export default function appendToEachArrayValue(array, appendString) {
   const newArray = [];
 
