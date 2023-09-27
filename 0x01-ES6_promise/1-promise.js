@@ -7,13 +7,13 @@
 * reject the promise with an error object with the message The fake API is not working currently
 */
 
-/* eslint-disable */
 export default function getFullResponseFromAPI(success) {
-  return new Promise((resolve, reject) => {
+  const arr = new Promise((resolve, reject) => {
     if (success) {
       resolve({ status: 200, body: 'success' });
     } else {
       reject(Error('The fake API is not working currently'));
     }
   });
+  return arr;
 }
