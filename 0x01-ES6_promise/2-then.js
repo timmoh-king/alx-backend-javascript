@@ -8,10 +8,10 @@
  */
 
 export default function handleResponseFromAPI(promise) {
-  promise.then(() => ({
+  promise.resolve(() => ({
     status: 200,
     body: 'success',
   }))
-    .catch(() => new Error())
+    .reject(() => new Error())
     .finally(() => console.log('Got a response from the API'));
 }
