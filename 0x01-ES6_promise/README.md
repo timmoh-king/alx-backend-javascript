@@ -8,3 +8,20 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 - Throw / Try
 - The await operator
 - How to use an async function
+
+`uploadPhoto` returns a response with format
+
+```
+{
+  status: 200,
+  body: 'photo-profile-1',
+}
+```
+
+`createUser` returns a response with the format
+```
+{
+  firstName: 'Guillaume',
+  lastName: 'Salva',
+}
+```
