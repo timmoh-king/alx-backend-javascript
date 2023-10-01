@@ -10,21 +10,20 @@
  * amount(Number) and conversionRate(Number) and return the amount * conversionRate
  */
 
-import Currency from './3-currency';
+// import Currency from './3-currency';
 
-export default class Pricing extends Currency {
+export default class Pricing {
   constructor(amount, currency) {
-    super();
     this._amount = amount;
     this._currency = currency;
   }
 
   displayFullPrice() {
-    return `${this._amount} ${this.name} (${this.code})`;
+    return `${this._amount} ${this.currency.name} (${this.currency.code})`;
   }
 
   static convertPrice(amount, conversionRate) {
-    return (conversionRate * amount.amount);
+    return (conversionRate * amount);
   }
 
   get amount() {
