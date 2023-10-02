@@ -4,32 +4,44 @@
 * each value should be stored in an underscore attribute
 * add a method called cloneCar that should return a new object of the class
 */
-const cloneSymbol = Symbol('clone');
-
 export default class Car {
-  constructor(brand, motor, color) {
-    this._brand = brand;
-    this._motor = motor;
-    this._color = color;
+  constructor (brand, motor, color) {
+    this.brand = brand;
+    this.motor = motor;
+    this.color = color;
   }
 
-  get brand() {
+  get brand () {
     return this._brand;
   }
 
-  get motor() {
+  set brand (value) {
+    this._brand = value;
+  }
+
+  get motor () {
     return this._motor;
   }
 
-  get color() {
+  set motor (value) {
+    this._motor = value;
+  }
+
+  get color () {
     return this._color;
   }
 
-  [cloneSymbol]() {
-    return new Car(this._brand, this._motor, this._color);
+  set color (value) {
+    this._color = value;
   }
 
-  cloneCar() {
-    return this[cloneSymbol]();
+  static get [Symbol.species] () {
+    return this;
+  }
+
+  cloneCar () {
+    const Species = this.constructor[Symbol.species];
+
+    return new Species();
   }
 }
