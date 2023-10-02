@@ -13,7 +13,7 @@ export default function createIteratorObject(report) {
             yield employee;
           }
         }
-      }
+      },
     }
   );
 }
