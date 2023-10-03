@@ -4,7 +4,7 @@
  * id (Number), firstName (String), and location (String).
  */
 
-export default function getListStudents () {
+export default function getListStudents() {
   return ([
     {
       id: 1,
