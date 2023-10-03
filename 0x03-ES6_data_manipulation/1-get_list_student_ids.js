@@ -7,7 +7,6 @@
 export default function getListStudentIds(studentObj) {
   if (Array.isArray(studentObj) === true) {
     return Object.values(studentObj).map((o) => o.id);
-  } else {
-    return [];
   }
+  return [];
 }
