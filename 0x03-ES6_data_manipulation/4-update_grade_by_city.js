@@ -4,16 +4,18 @@
  *   accept a list of students (from getListStudents), a city (String), and newGrades
  */
 
-
 export default function updateStudentGradeByCity(studentObj, city, newGrades) {
   const students = Object.values(studentObj).filter((o) => o.location === city);
 
-  const updatedStudents = students.map((student) => ({
-	id: student.id,
-    firstName: student.firstName,
-    location: student.location,
-    grade: newGrades[student.id] ? newGrades[student.id].grade : 'N/A',
-  }));
+  const updatedStudents = students.map((student) => {
+    const studentGrade = newGrades.filter((grade) => grade.studentId === student.id)[0];
+    return {
+      id: student.id,
+      firstName: student.firstName,
+      location: student.location,
+      grade: studentGrade ? studentGrade.grade : 'N/A',
+    };
+  });
 
   return updatedStudents;
 }
