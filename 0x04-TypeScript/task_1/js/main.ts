@@ -26,3 +26,9 @@ const director1: Director = {
 	numberOfReports: 17,
 }
 console.log(director1);
+
+function printTeacher(firstName: string, lastName: string): string {
+	const initial: string[] = firstName.split("");
+	return `${initial[0]}. ${lastName}`;
+}
+printTeacher("John", "Doe")
