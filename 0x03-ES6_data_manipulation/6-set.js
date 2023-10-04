@@ -4,9 +4,5 @@
  */
 
 export default function setFromArray(arr) {
-  const set = new Set();
-  for (let i = 0; i < arr.length; +i) {
-    set.add(arr[i]);
-  }
-  return set;
+  return new Set(arr);
 }
