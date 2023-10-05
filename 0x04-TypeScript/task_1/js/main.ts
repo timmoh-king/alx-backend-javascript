@@ -31,4 +31,30 @@ function printTeacher(firstName: string, lastName: string): string {
 	const initial: string[] = firstName.split("");
 	return `${initial[0]}. ${lastName}`;
 }
-printTeacher("John", "Doe")
+printTeacher("John", "Doe");
+
+interface StudentConstructor {
+	firstName: string;
+	lastName: string;
+}
+
+interface Student {
+	workOnHomework(): string;
+	displayName(): string;
+}
+
+class StudentClass implements Student {
+	private firstName: string;
+	private lastName: string;
+
+	constructor({ firstName, lastName }: StudentConstructor) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	workOnHomework(): string {
+		return "Currently working";
+	}
+	displayName(): string {
+		return this.firstName;
+	}
+}
