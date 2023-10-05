@@ -41,6 +41,30 @@ function createEmployee(salary: number | string): Director | Teacher {
 interface Employee {
 	work(): string;
 }
+
+interface Director extends Employee {
+	workDirectorTasks(): string;
+}
+
+interface Teacher extends Employee {
+	workTeacherTasks(): string;
+}
+
+function isDirector(employee: Employee): employee is Director {
+	return "workDirectorTasks" in employee;
+}
+
+function isTeacher(employee: Employee): employee is Teacher {
+	return "workTeacherTasks" in employee;
+}
+
+function executeWork(employee: Employee): string {
+	if (isDirector(employee)) {
+		return employee.workDirectorTasks();
+	} else if (isTeacher(employee)) {
+		return employee.workTeacherTasks();
+	}
+}
 //end of task 6
 
 type Subjects = "Math" | "History";
