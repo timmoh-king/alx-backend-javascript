@@ -13,5 +13,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  process.stdout.write(`Server running at http://${host}:${port}/`);
+  process.stdout.write(`Server running at http://${host}:${port}\n`);
 });
