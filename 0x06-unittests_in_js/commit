@@ -1,1 +1,1 @@
-git add -A && git commit -m "Updated 2. Basic test using Chai assertion library" && git push
+git add -A && git commit -m "Updated sinon installation" && git push
