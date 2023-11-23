@@ -1,1 +1,1 @@
-git add -A && git commit -m "Updated sinon installation" && git push
+git add -A && git commit -m "Task 3. Spies" && git push
