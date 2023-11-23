@@ -1,1 +1,1 @@
-git add -A && git commit -m "Task 1. Combining descriptions" && git push
+git add -A && git commit -m "2. Basic test using Chai assertion library" && git push
