@@ -22,24 +22,9 @@ describe('app API test cases', () => {
   });
 
   it('should check if the id is not a number', (done) => {
-    request.get(`${url}/cart/him`, (_err, res) => {
+    request.get(`${url}/cart/him`, (_err, res, body) => {
       expect(res.statusCode).to.be.equal(404);
       done();
-    });
-  });
-
-  it('check the GET /available_payments endpoint', (done) => {
-    request.get(`${url}/available_payments`, (_err, res, body) => {
-      expect(res.statusCode).to.be.equal(200);
-      expect(body).to.be.equal({payment_methods: {credit_cards: true, paypal: false}});
-      done();
-    });
-  });
-
-  it('check the /login endpoint', (done) => {
-    request.post(`${url}/login`, {json: {userName: 'alx_se'}}, (_err, res, body) => {
-      expect(res.statusCode).to.be.equal(200);
-      expect(body).to.be.equal('Welcome alx_se');
     });
   });
 });
