@@ -38,8 +38,8 @@ describe('app API test cases', () => {
   });
 
   it('POST /login returns valid response', (done) => {
-    const userData = { userName: 'Pinkbrook' };
-    request.post(`${url}/login`, {json: userData}, (_err, res, body) => {
+    const userData = { userName: 'John' };
+    request.post(`${url}/login`, { json: userData }, (_err, res, body) => {
       expect(res.statusCode).to.be.equal(200);
       expect(body).to.be.equal(`Welcome ${userData.userName}`);
       done();
