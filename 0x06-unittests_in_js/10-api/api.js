@@ -13,19 +13,14 @@ app.get('/cart/:id(\\d+)', (req, res) => {
 });
 
 app.get('/available_payments', (_, res) => {
-  res.send({
-    payment_methods: {
-      credit_cards: true,
-      paypal: false
-    }
-  });
+  res.json({ payment_methods: { credit_cards: true, paypal: false } });
 });
 
 app.post('/login', (req, res) => {
   let username = '';
 
   if (req.body) {
-    username = req.body(userName);
+    username = req.body.userName;
   }
   res.send(`Welcome ${username}`);
 });
