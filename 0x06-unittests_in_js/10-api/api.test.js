@@ -22,8 +22,25 @@ describe('app API test cases', () => {
   });
 
   it('should check if the id is not a number', (done) => {
-    request.get(`${url}/cart/him`, (_err, res, body) => {
+    request.get(`${url}/cart/-47`, (_err, res, body) => {
       expect(res.statusCode).to.be.equal(404);
+      done();
+    });
+  });
+
+  it('GET /available_payments returns valid response', (done) => {
+    request.get(`${API_URL}/available_payments`, (_err, res, body) => {
+      expect(res.statusCode).to.be.equal(200);
+      expect(JSON.parse(body))
+        .to.be.deep.equal({ payment_methods: { credit_cards: true, paypal: false } });
+      done();
+    });
+  });
+
+  it('POST /login returns valid response', (done) => {
+    request.post(`${API_URL}/login`, {json: {userName: 'Pinkbrook'}}, (_err, res, body) => {
+      expect(res.statusCode).to.be.equal(200);
+      expect(body).to.be.equal('Welcome Pinkbrook');
       done();
     });
   });
